@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#09051c">
+  <title>Luna — Tense Adventures</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@500;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="stars" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Luna home"><span class="logo-cat">♠</span><span><b>LUNA</b><small>ENGLISH GAMES</small></span></a>
+    <nav aria-label="Main navigation"><a class="active" href="#games">Games</a><a href="#how">How it works</a><a href="#progress">Progress</a></nav>
+    <div class="actions"><button id="soundToggle" class="icon-btn" aria-label="Turn sound off">♪</button><div class="xp-pill">◆ <strong id="totalXp">0</strong> XP</div></div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow"><span></span> GRAMMAR, BUT MAKE IT AN ADVENTURE <span></span></div>
+      <h1>MASTER ENGLISH<br><em>TENSES</em></h1>
+      <p>Three worlds. One mission. Choose the right tense and become a grammar legend.</p>
+      <div class="tense-pills"><span>Present Simple</span><span>Present Continuous</span><span>Present Perfect</span></div>
+    </section>
+
+    <section class="games" id="games" aria-label="Choose a game">
+      <article class="game-card quest" tabindex="0" data-game="quest">
+        <img src="assets/quest.png" alt="A cat wizard exploring a moonlit magical kingdom">
+        <div class="shade"></div><span class="number">01</span><span class="type">MAGICAL JOURNEY</span>
+        <div class="card-copy"><h2>QUEST</h2><p>Restore the three tense crystals.</p><button>Begin quest <span>→</span></button></div>
+      </article>
+      <article class="game-card chase" tabindex="0" data-game="chase">
+        <img src="assets/chase.png" alt="A cat hero racing through a neon city">
+        <div class="shade"></div><span class="number">02</span><span class="type">SPEED CHALLENGE</span>
+        <div class="card-copy"><h2>CHASE</h2><p>Answer fast. Keep your streak alive.</p><button>Start chase <span>→</span></button></div>
+      </article>
+      <article class="game-card mystery" tabindex="0" data-game="mystery">
+        <img src="assets/mystery.png" alt="A cat detective following clues in a mysterious library">
+        <div class="shade"></div><span class="number">03</span><span class="type">DETECTIVE CASE</span>
+        <div class="card-copy"><h2>MYSTERY</h2><p>Find the tense hiding in every clue.</p><button>Solve mystery <span>→</span></button></div>
+      </article>
+    </section>
+
+    <section class="how" id="how">
+      <p class="section-label">YOUR MISSION</p><h2>Three tenses. Endless adventures.</h2>
+      <div class="steps"><div><b>01</b><span>READ</span><p>Look for time clues in each sentence.</p></div><i>→</i><div><b>02</b><span>CHOOSE</span><p>Pick the tense that fits the situation.</p></div><i>→</i><div><b>03</b><span>LEVEL UP</span><p>Build a streak and collect more XP.</p></div></div>
+    </section>
+
+    <section class="progress-section" id="progress"><div><span class="mini-label">YOUR PROGRESS</span><h2>Ready for your first adventure?</h2></div><div class="progress-track"><span id="progressFill"></span></div><strong><span id="answeredCount">0</span> questions answered</strong></section>
+  </main>
+
+  <dialog id="gameDialog">
+    <div class="game-modal">
+      <button class="close" id="closeGame" aria-label="Close game">×</button>
+      <div class="modal-top"><span id="gameTag">QUEST</span><div><span>Score <b id="score">0</b></span><span>Streak <b id="streak">0</b> 🔥</span></div></div>
+      <div class="question-progress"><span id="questionBar"></span></div>
+      <section id="playScreen"><p class="question-number" id="questionNumber">QUESTION 1 OF 5</p><h2 id="sentence"></h2><p class="prompt">Which tense completes the sentence?</p><div class="answers" id="answers"></div><div class="feedback" id="feedback" aria-live="polite"></div><button class="next" id="nextQuestion">Next question →</button></section>
+      <section class="result" id="resultScreen" hidden><div class="result-icon">★</div><p>ADVENTURE COMPLETE</p><h2 id="resultTitle">Brilliant work!</h2><div class="final-score"><strong id="finalScore">0</strong><span>XP EARNED</span></div><p id="resultCopy"></p><button class="next" id="playAgain">Play again</button></section>
+    </div>
+  </dialog>
+  <script src="script.js"></script>
+</body>
+</html>
